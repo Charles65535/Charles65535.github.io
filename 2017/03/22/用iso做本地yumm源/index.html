@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="产品，PM" />
+  <meta name="keywords" content="linux," />
 
 
 
@@ -87,15 +87,40 @@
 
 
 
-<meta name="description" content="知行合一">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charles Xu">
-<meta property="og:url" content="https://charles65535.github.io/index.html">
+<meta name="description" content="使用Linux版本为centos 6.0 
+###1、找到yum的安装源设置 
+[root@node2 yum.repos.d]# pwd
+/etc/yum.repos.d
+
+[root@node2 yum.repos.d]# ll
+total 16
+-rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
+-rw-r--r--. 1 r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用iso做本地yumm源">
+<meta property="og:url" content="https://charles65535.github.io/2017/03/22/用iso做本地yumm源/index.html">
 <meta property="og:site_name" content="Charles Xu">
-<meta property="og:description" content="知行合一">
+<meta property="og:description" content="使用Linux版本为centos 6.0 
+###1、找到yum的安装源设置 
+[root@node2 yum.repos.d]# pwd
+/etc/yum.repos.d
+
+[root@node2 yum.repos.d]# ll
+total 16
+-rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
+-rw-r--r--. 1 r">
+<meta property="og:updated_time" content="2017-03-22T08:57:38.944Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charles Xu">
-<meta name="twitter:description" content="知行合一">
+<meta name="twitter:title" content="用iso做本地yumm源">
+<meta name="twitter:description" content="使用Linux版本为centos 6.0 
+###1、找到yum的安装源设置 
+[root@node2 yum.repos.d]# pwd
+/etc/yum.repos.d
+
+[root@node2 yum.repos.d]# ll
+total 16
+-rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
+-rw-r--r--. 1 r">
 
 
 
@@ -123,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://charles65535.github.io/"/>
+  <link rel="canonical" href="https://charles65535.github.io/2017/03/22/用iso做本地yumm源/"/>
 
 
 
 
 
-  <title> Charles Xu </title>
+  <title> 用iso做本地yumm源 | Charles Xu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -173,9 +198,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-   page-home 
- ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -278,163 +301,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://charles65535.github.io/2017/03/22/linux内核升级/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Charles Xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/0.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Charles Xu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/22/linux内核升级/" itemprop="url">
-                  linux内核升级
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T16:57:09+08:00">
-                2017-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/operation/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          1.下载内核 从以下网站https://www.kernel.org/
-2.上传kernel文件到/usr/src/kernels/ 目录下，此处也可以选择其他目录
-3.解压kernel文件
-* [root@apache kernels]# tar -xJvf linux-3.16.1.tar.xz
-4.安装包 gcc、ncurses-devel
-* [root@apache yum.repos.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/22/linux内核升级/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
 
   
 
@@ -464,10 +333,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2017/03/22/用iso做本地yumm源/" itemprop="url">
-                  用iso做本地yumm源
-                </a>
+                用iso做本地yumm源
               
             
           </h1>
@@ -540,367 +406,159 @@
       
 
       
-        
-          
-          使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
+        <p>使用Linux版本为centos 6.0 </p>
+<p>###1、找到yum的安装源设置 <br></p>
+<pre><code>[root@node2 yum.repos.d]# pwd
 /etc/yum.repos.d
 
 [root@node2 yum.repos.d]# ll
 total 16
 -rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/22/用iso做本地yumm源/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+-rw-r--r--. 1 root root  637 Jul  2 22:16 CentOS-Debuginfo.repo
+-rw-r--r--. 1 root root  626 Jul  2 22:16 CentOS-Media.repo
+</code></pre><p>将上面列出的三个.repo源列表文件改一下名，我们不用系统默认的安装源列表，默认的都是官方的很多软件源，连接很慢。然后复制一份CentOS-Base.repo并命名为iso.repo<br></p>
+<pre><code>[root@node2 yum.repos.d]# ll
+
+total 16
+-rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo.save
+-rw-r--r--. 1 root root  637 Jul  2 22:16 CentOS-Debuginfo.repo.save
+-rw-r--r--. 1 root root  626 Jul  2 22:16 CentOS-Media.repo.save
+-rw-r--r--. 1 root root  697 Oct 24 10:28 iso.repo
+</code></pre><p>###2、修改iso.repo内容，只剩下这些内容：</p>
+<pre><code># CentOS-Base.repo
+#
+[base]
+name=CentOS-$releasever - Base
+baseurl=file:///mnt/cdrom/
+gpgcheck=1
+enabled=1
+gpgkey=file:///mnt/cdrom/RPM-GPG-KEY-CentOS-6
+</code></pre><p>###3、mount系统安装iso到指定目录<br><strong>[root@node2 yum.repos.d]# mkdir /mnt/cdrom</strong><br></p>
+<p><strong>[root@node2 yum.repos.d]# mount -t iso9660 -r /dev/cdrom /mnt/cdrom</strong><br></p>
+<p>其中-t iso9660指明了文件格式是iso标准的， -r表示只读模式， /dev/cdrom是光驱设备，/mnt/cdrom是自定义的目录。<br><br>然后进入到/mnt/cdrom下查看文件如下结果，就为正确了。<br></p>
+<p><strong>[root@node2 cdrom]# ll</strong><br></p>
+<pre><code>total 632&lt;/br&gt;
+-rw-r--r--. 2 zxliu zxliu     14 Jul  9 12:46 CentOS_BuildTag
+drwxr-xr-x. 4 zxliu zxliu   2048 Jun  9 20:54 EFI
+-rw-rw-r--. 2 zxliu zxliu    212 Jul  1 21:23 EULA
+-rw-rw-r--. 2 zxliu zxliu  18009 Jul  1 21:23 GPL
+drwxr-xr-x. 3 zxliu zxliu   2048 Jul  9 12:46 images
+drwxr-xr-x. 2 zxliu zxliu   2048 Jul  9 12:43 isolinux
+drwxrwxr-x. 2 zxliu zxliu 604160 Jul  9 12:51 Packages
+-rw-rw-r--. 2 zxliu zxliu   1354 Jul  2 23:39 RELEASE-NOTES-en-US.html
+drwxr-xr-x. 2 zxliu zxliu   4096 Jul  9 12:53 repodata
+-rw-r--r--. 2 zxliu zxliu   1706 Jul  2 23:31 RPM-GPG-KEY-CentOS-6
+-rw-r--r--. 2 zxliu zxliu   1730 Jul  2 23:31 RPM-GPG-KEY-CentOS-Debug-6
+-rw-r--r--. 2 zxliu zxliu   1730 Jul  2 23:31 RPM-GPG-KEY-CentOS-Security-6
+-rw-r--r--. 2 zxliu zxliu   1734 Jul  2 23:31 RPM-GPG-KEY-CentOS-Testing-6
+-r--r--r--. 1 zxliu zxliu   3380 Jul  9 12:53 TRANS.TBL
+</code></pre><p>可以看到packages和RPM-GPG-KEY-CentOS-6这是两个最重要的东西，yum就参考这两个来安装软件的。</p>
+<p>###4、执行yum list命令查看软件列表<br><strong>[root@node2 cdrom]# yum list| grep gcc</strong><br></p>
+<pre><code>gcc.x86_64                                4.4.4-13.el6                     @base
+gcc-c++.x86_64                            4.4.4-13.el6                     @base
+libgcc.x86_64                             4.4.4-13.el6                     @anaconda-CentOS-201106060106.x86_64/6.0
+compat-gcc-34.x86_64                      3.4.6-19.el6                     base
+compat-gcc-34-c++.x86_64                  3.4.6-19.el6                     base
+compat-gcc-34-g77.x86_64                  3.4.6-19.el6                     base
+gcc-gfortran.x86_64                       4.4.4-13.el6                     base
+gcc-gnat.x86_64                           4.4.4-13.el6                     base
+gcc-Java.x86_64                           4.4.4-13.el6                     base
+gcc-objc.x86_64                           4.4.4-13.el6                     base
+gcc-objc++.x86_64                         4.4.4-13.el6                     base
+libgcc.i686                                  4.4.4-13.el6                     base
+</code></pre><p>至此可以用yum进行安装了</p>
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
       
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://charles65535.github.io/2017/03/22/work2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Charles Xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/0.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Charles Xu">
-    </span>
-
-    
-      <header class="post-header">
-
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/22/work2/" itemprop="url">
-                  配置shadowsocks代理加快git clone速度
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T12:46:04+08:00">
-                2017-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/other/" itemprop="url" rel="index">
-                    <span itemprop="name">其它</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.png" alt="Charles Xu WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
       
       
-
-      
-        
-          
-          只需要以下两行命令：
-git config --global http.proxy &apos;socks5://127.0.0.1:1080&apos;
-git config --global https.proxy &apos;socks5://127.0.0.1:1080&apos;
-打开shadowsocks全局代理，然后Git clone即可
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/22/work2/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://charles65535.github.io/2017/03/22/work1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Charles Xu">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/0.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Charles Xu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/22/work1/" itemprop="url">
-                  VMware虚拟机扩容——linux操作系统
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T10:49:42+08:00">
-                2017-03-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/operation/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.png" alt="Charles Xu Alipay"/>
+          <p>支付宝打赏</p>
         </div>
-      </header>
-    
+      
+    </div>
+  </div>
 
-
-    <div class="post-body" itemprop="articleBody">
 
       
-      
+    </div>
 
+    <div>
       
         
-          
-          方案一：扩容
-把可用的硬盘空间,全部扩充到一个硬盘下,这样的好处就是,硬盘的空间可以利用起来,但坏处就是如果此硬盘分区出问题,就会导致硬盘分区损坏,可能在损坏下的数据就无法恢复了。
 
-step1 终端输入fdisk –l 查看分区情况：可以看到/dev/sdc为刚才加上的没有分区的盘。
-
-step2 分区终端输入fdisk /dev/sdc 进行分区。输入m查看帮助。然后依次输入n新建分区,p 选
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/22/work1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
       
 
       
+        
+      
 
       
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/22/work2/" rel="next" title="配置shadowsocks代理加快git clone速度">
+                <i class="fa fa-chevron-left"></i> 配置shadowsocks代理加快git clone速度
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/22/linux内核升级/" rel="prev" title="linux内核升级">
+                linux内核升级 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -908,6 +566,10 @@ step2 分区终端输入fdisk /dev/sdc 进行分区。输入m查看帮助。然�
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -1143,6 +805,10 @@ step2 分区终端输入fdisk /dev/sdc 进行分区。输入m查看帮助。然�
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 
