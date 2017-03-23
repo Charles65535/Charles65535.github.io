@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -87,40 +87,20 @@
 
 
 
-<meta name="description" content="使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
-
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r">
+<meta name="description" content="原理　　模板匹配是一项在一幅图像中寻找与另一幅模板图像最匹配(相似)部分的技术。　　本程序采用绝对误差和算法（Sum of Absolute Differences，简称SAD算法）实现：设S(x,y)是大小为mxn的原始图像，T(x,y)是MxN的模板图像，分别如下图(a)、(b)所示，我们的目的是：在(a)中找到与(b)匹配的区域（黄框所示）。 　　在搜索图S中，以(i,j)为左上角，取MxN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用iso做本地yumm源">
-<meta property="og:url" content="http://xandl.cn/2017/03/22/用iso做本地yumm源/index.html">
+<meta property="og:title" content="数字图像处理-模板匹配">
+<meta property="og:url" content="http://xandl.cn/2017/03/23/img-match/index.html">
 <meta property="og:site_name" content="Charles Xu">
-<meta property="og:description" content="使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
-
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r">
-<meta property="og:updated_time" content="2017-03-22T08:57:38.944Z">
+<meta property="og:description" content="原理　　模板匹配是一项在一幅图像中寻找与另一幅模板图像最匹配(相似)部分的技术。　　本程序采用绝对误差和算法（Sum of Absolute Differences，简称SAD算法）实现：设S(x,y)是大小为mxn的原始图像，T(x,y)是MxN的模板图像，分别如下图(a)、(b)所示，我们的目的是：在(a)中找到与(b)匹配的区域（黄框所示）。 　　在搜索图S中，以(i,j)为左上角，取MxN">
+<meta property="og:image" content="http://xandl.cn/2017/03/23/img-match/0.png">
+<meta property="og:image" content="http://xandl.cn/2017/03/23/img-match/1.png">
+<meta property="og:image" content="http://xandl.cn/2017/03/23/img-match/2.png">
+<meta property="og:updated_time" content="2017-03-23T12:03:11.227Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用iso做本地yumm源">
-<meta name="twitter:description" content="使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
-
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r">
+<meta name="twitter:title" content="数字图像处理-模板匹配">
+<meta name="twitter:description" content="原理　　模板匹配是一项在一幅图像中寻找与另一幅模板图像最匹配(相似)部分的技术。　　本程序采用绝对误差和算法（Sum of Absolute Differences，简称SAD算法）实现：设S(x,y)是大小为mxn的原始图像，T(x,y)是MxN的模板图像，分别如下图(a)、(b)所示，我们的目的是：在(a)中找到与(b)匹配的区域（黄框所示）。 　　在搜索图S中，以(i,j)为左上角，取MxN">
+<meta name="twitter:image" content="http://xandl.cn/2017/03/23/img-match/0.png">
 
 
 
@@ -148,13 +128,13 @@ total 16
 
 
 
-  <link rel="canonical" href="http://xandl.cn/2017/03/22/用iso做本地yumm源/"/>
+  <link rel="canonical" href="http://xandl.cn/2017/03/23/img-match/"/>
 
 
 
 
 
-  <title> 用iso做本地yumm源 | Charles Xu </title>
+  <title> 数字图像处理-模板匹配 | Charles Xu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -312,7 +292,7 @@ total 16
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2017/03/22/用iso做本地yumm源/">
+    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2017/03/23/img-match/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Charles Xu">
@@ -333,7 +313,7 @@ total 16
             
             
               
-                用iso做本地yumm源
+                数字图像处理-模板匹配
               
             
           </h1>
@@ -348,8 +328,8 @@ total 16
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T16:34:41+08:00">
-                2017-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T19:33:31+08:00">
+                2017-03-23
               </time>
             
 
@@ -371,8 +351,8 @@ total 16
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/operation/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
+                  <a href="/categories/programing/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -406,68 +386,73 @@ total 16
       
 
       
-        <p>使用Linux版本为centos 6.0 </p>
-<p>###1、找到yum的安装源设置 <br></p>
-<pre><code>[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
+        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>　　模板匹配是一项在一幅图像中寻找与另一幅模板图像最匹配(相似)部分的技术。<br><br>　　本程序采用绝对误差和算法（Sum of Absolute Differences，简称SAD算法）实现：<br>设S(x,y)是大小为mxn的原始图像，T(x,y)是MxN的模板图像，分别如下图(a)、(b)所示，我们的目的是：在(a)中找到与(b)匹配的区域（黄框所示）。<br><br> 　　在搜索图S中，以(i,j)为左上角，取MxN大小的子图，计算其与模板的相似度；遍历整个搜索图，在所有能够取到的子图中，找到与模板图最相似的子图作为最终匹配结果。<br>SAD算法的相似性测度公式如下。显然，绝对误差和D(i,j)越小，表明越相似，故只需找到最小的D(i,j)即可确定能匹配的子图位置：</p>
+<p><img src="/2017/03/23/img-match/0.png" alt="logo"><br><img src="/2017/03/23/img-match/1.png" alt="logo"></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>本次程序使用Python语言实现。具体如下：</p>
+<ol>
+<li><ol>
+<li>导入原始图像与模板图像的灰度图；</li>
+</ol>
+</li>
+<li>构造0矩阵作为初始距离；</li>
+<li>从原始图左上角开始遍历；</li>
+<li>计算当前位置子图与模板距离（即相似度）；</li>
+<li>找出距离最短的子图坐标位置；</li>
+<li>在原图上画出匹配区域并显示。</li>
+</ol>
+<h2 id="处理结果"><a href="#处理结果" class="headerlink" title="处理结果"></a>处理结果</h2><p><img src="/2017/03/23/img-match/2.png" alt="logo"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code># !/usr/bin/env python
+# -*- coding:utf-8 -*-
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
 
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 root root  637 Jul  2 22:16 CentOS-Debuginfo.repo
--rw-r--r--. 1 root root  626 Jul  2 22:16 CentOS-Media.repo
-</code></pre><p>将上面列出的三个.repo源列表文件改一下名，我们不用系统默认的安装源列表，默认的都是官方的很多软件源，连接很慢。然后复制一份CentOS-Base.repo并命名为iso.repo<br></p>
-<pre><code>[root@node2 yum.repos.d]# ll
 
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo.save
--rw-r--r--. 1 root root  637 Jul  2 22:16 CentOS-Debuginfo.repo.save
--rw-r--r--. 1 root root  626 Jul  2 22:16 CentOS-Media.repo.save
--rw-r--r--. 1 root root  697 Oct 24 10:28 iso.repo
-</code></pre><p>###2、修改iso.repo内容，只剩下这些内容：</p>
-<pre><code># CentOS-Base.repo
-#
-[base]
-name=CentOS-$releasever - Base
-baseurl=file:///mnt/cdrom/
-gpgcheck=1
-enabled=1
-gpgkey=file:///mnt/cdrom/RPM-GPG-KEY-CentOS-6
-</code></pre><p>###3、mount系统安装iso到指定目录<br><strong>[root@node2 yum.repos.d]# mkdir /mnt/cdrom</strong><br></p>
-<p><strong>[root@node2 yum.repos.d]# mount -t iso9660 -r /dev/cdrom /mnt/cdrom</strong><br></p>
-<p>其中-t iso9660指明了文件格式是iso标准的， -r表示只读模式， /dev/cdrom是光驱设备，/mnt/cdrom是自定义的目录。<br><br>然后进入到/mnt/cdrom下查看文件如下结果，就为正确了。<br></p>
-<p><strong>[root@node2 cdrom]# ll</strong><br></p>
-<pre><code>total 632&lt;/br&gt;
--rw-r--r--. 2 zxliu zxliu     14 Jul  9 12:46 CentOS_BuildTag
-drwxr-xr-x. 4 zxliu zxliu   2048 Jun  9 20:54 EFI
--rw-rw-r--. 2 zxliu zxliu    212 Jul  1 21:23 EULA
--rw-rw-r--. 2 zxliu zxliu  18009 Jul  1 21:23 GPL
-drwxr-xr-x. 3 zxliu zxliu   2048 Jul  9 12:46 images
-drwxr-xr-x. 2 zxliu zxliu   2048 Jul  9 12:43 isolinux
-drwxrwxr-x. 2 zxliu zxliu 604160 Jul  9 12:51 Packages
--rw-rw-r--. 2 zxliu zxliu   1354 Jul  2 23:39 RELEASE-NOTES-en-US.html
-drwxr-xr-x. 2 zxliu zxliu   4096 Jul  9 12:53 repodata
--rw-r--r--. 2 zxliu zxliu   1706 Jul  2 23:31 RPM-GPG-KEY-CentOS-6
--rw-r--r--. 2 zxliu zxliu   1730 Jul  2 23:31 RPM-GPG-KEY-CentOS-Debug-6
--rw-r--r--. 2 zxliu zxliu   1730 Jul  2 23:31 RPM-GPG-KEY-CentOS-Security-6
--rw-r--r--. 2 zxliu zxliu   1734 Jul  2 23:31 RPM-GPG-KEY-CentOS-Testing-6
--r--r--r--. 1 zxliu zxliu   3380 Jul  9 12:53 TRANS.TBL
-</code></pre><p>可以看到packages和RPM-GPG-KEY-CentOS-6这是两个最重要的东西，yum就参考这两个来安装软件的。</p>
-<p>###4、执行yum list命令查看软件列表<br><strong>[root@node2 cdrom]# yum list| grep gcc</strong><br></p>
-<pre><code>gcc.x86_64                                4.4.4-13.el6                     @base
-gcc-c++.x86_64                            4.4.4-13.el6                     @base
-libgcc.x86_64                             4.4.4-13.el6                     @anaconda-CentOS-201106060106.x86_64/6.0
-compat-gcc-34.x86_64                      3.4.6-19.el6                     base
-compat-gcc-34-c++.x86_64                  3.4.6-19.el6                     base
-compat-gcc-34-g77.x86_64                  3.4.6-19.el6                     base
-gcc-gfortran.x86_64                       4.4.4-13.el6                     base
-gcc-gnat.x86_64                           4.4.4-13.el6                     base
-gcc-Java.x86_64                           4.4.4-13.el6                     base
-gcc-objc.x86_64                           4.4.4-13.el6                     base
-gcc-objc++.x86_64                         4.4.4-13.el6                     base
-libgcc.i686                                  4.4.4-13.el6                     base
-</code></pre><p>至此可以用yum进行安装了</p>
+def img_match(src, template, show=True):
+    &quot;&quot;&quot;img_match 函数利用绝对误差和算法，对两幅图像进行模板匹配&quot;&quot;&quot;
+    src_copy = src.copy()       # src_copy为原图
+    t_height, t_width = template.shape  # 模板尺寸
+    s_height, s_width = src.shape   # 原图像尺寸
+    # print(src.shape)
+    dst = np.zeros([s_width - t_width, s_height - t_height])        # 构造0矩阵
 
+    for i in range(0, s_width - t_width):       # 遍历原图
+        for j in range(0, s_height - t_height):
+            temp = src[j:t_height + j, i:t_width + i]     # 当前位置子图
+            dst[i][j] = dst[i][j] + np.sum(np.abs(temp - template))   # 子图与模板的距离
+
+    abs_min = np.min(dst)
+    print(&apos;abs_min:&apos;, abs_min)
+    for i in range(0, s_width - t_width-1):         # 找出匹配位置的坐标点
+        for j in range(0, s_height - t_height-1):
+            if dst[i][j] == abs_min:
+                y = i
+                x = j
+    print(&apos;x 坐标点为：%d \n&apos; % x, &apos;y 坐标点为:%d &apos; % y)
+
+    if show:
+        for i in range(0, t_width):      # 画出匹配位置
+            src[x+i, y] = 255
+            src[x, y+i] = 255
+            src[x+i, y+t_height] = 255
+            src[x+t_width, y+i] = 255
+
+        plt.subplot(221), plt.imshow(src_copy, cmap=&apos;gray&apos;)
+        plt.title(&apos;Original Image&apos;), plt.xticks([]), plt.yticks([])
+        plt.subplot(223), plt.imshow(template, cmap=&apos;gray&apos;)
+        plt.title(&apos;Template&apos;), plt.xticks([]), plt.yticks([])
+        plt.subplot(222), plt.imshow(src, cmap=&apos;gray&apos;)
+        plt.title(&apos;Result&apos;), plt.xticks([]), plt.yticks([])
+        plt.show()
+
+
+if __name__ == &apos;__main__&apos;:
+    src1 = np.array(Image.open(&apos;lena_gray.jpg&apos;))  # 原图像
+    template1 = np.array(Image.open(&apos;eye_gray.jpg&apos;))  # 模板
+    img_match(src1, template1)
+
+# -*- end of file -*-
+</code></pre>
       
     </div>
 
@@ -517,7 +502,7 @@ libgcc.i686                                  4.4.4-13.el6                     ba
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -530,8 +515,8 @@ libgcc.i686                                  4.4.4-13.el6                     ba
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/配置shadowsocks代理加快git clone速度/" rel="next" title="配置shadowsocks代理加快git clone速度">
-                <i class="fa fa-chevron-left"></i> 配置shadowsocks代理加快git clone速度
+              <a href="/2017/03/23/extraction/" rel="next" title="数字图像处理-角点算法">
+                <i class="fa fa-chevron-left"></i> 数字图像处理-角点算法
               </a>
             
           </div>
@@ -539,10 +524,6 @@ libgcc.i686                                  4.4.4-13.el6                     ba
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/22/linux_updata/" rel="prev" title="linux内核升级">
-                linux内核升级 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -589,8 +570,17 @@ libgcc.i686                                  4.4.4-13.el6                     ba
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/0.png"
@@ -672,6 +662,22 @@ libgcc.i686                                  4.4.4-13.el6                     ba
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理结果"><span class="nav-number">3.</span> <span class="nav-text">处理结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

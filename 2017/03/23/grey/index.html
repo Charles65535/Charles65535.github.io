@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="python," />
 
 
 
@@ -87,40 +87,25 @@
 
 
 
-<meta name="description" content="使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
-
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r">
+<meta name="description" content="原理　　灰度化处理就是将一幅色彩图像转化为灰度图像的过程。彩色图像分为R，G，B三个分量，分别显示出红绿蓝等各种颜色，灰度化就是使彩色的R，G，B分量相等的过程。灰度值大的像素点比较亮（像素值最大为255，为白色），反之比较暗（像素最下为0，为黑色）。　　图像灰度化的算法主要有以下3种：
+1)最大值法：使转化后的R，G，B得值等于转化前3个值中最大的一个，即：
+R=G=B=max（R，G，B）">
 <meta property="og:type" content="article">
-<meta property="og:title" content="用iso做本地yumm源">
-<meta property="og:url" content="http://xandl.cn/2017/03/22/用iso做本地yumm源/index.html">
+<meta property="og:title" content="数字图像处理-灰度化">
+<meta property="og:url" content="http://xandl.cn/2017/03/23/grey/index.html">
 <meta property="og:site_name" content="Charles Xu">
-<meta property="og:description" content="使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
-
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r">
-<meta property="og:updated_time" content="2017-03-22T08:57:38.944Z">
+<meta property="og:description" content="原理　　灰度化处理就是将一幅色彩图像转化为灰度图像的过程。彩色图像分为R，G，B三个分量，分别显示出红绿蓝等各种颜色，灰度化就是使彩色的R，G，B分量相等的过程。灰度值大的像素点比较亮（像素值最大为255，为白色），反之比较暗（像素最下为0，为黑色）。　　图像灰度化的算法主要有以下3种：
+1)最大值法：使转化后的R，G，B得值等于转化前3个值中最大的一个，即：
+R=G=B=max（R，G，B）">
+<meta property="og:image" content="http://xandl.cn/2017/03/23/grey/2.png">
+<meta property="og:image" content="http://xandl.cn/2017/03/23/grey/1.png">
+<meta property="og:updated_time" content="2017-03-23T12:00:57.770Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="用iso做本地yumm源">
-<meta name="twitter:description" content="使用Linux版本为centos 6.0 
-###1、找到yum的安装源设置 
-[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
-
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 r">
+<meta name="twitter:title" content="数字图像处理-灰度化">
+<meta name="twitter:description" content="原理　　灰度化处理就是将一幅色彩图像转化为灰度图像的过程。彩色图像分为R，G，B三个分量，分别显示出红绿蓝等各种颜色，灰度化就是使彩色的R，G，B分量相等的过程。灰度值大的像素点比较亮（像素值最大为255，为白色），反之比较暗（像素最下为0，为黑色）。　　图像灰度化的算法主要有以下3种：
+1)最大值法：使转化后的R，G，B得值等于转化前3个值中最大的一个，即：
+R=G=B=max（R，G，B）">
+<meta name="twitter:image" content="http://xandl.cn/2017/03/23/grey/2.png">
 
 
 
@@ -148,13 +133,13 @@ total 16
 
 
 
-  <link rel="canonical" href="http://xandl.cn/2017/03/22/用iso做本地yumm源/"/>
+  <link rel="canonical" href="http://xandl.cn/2017/03/23/grey/"/>
 
 
 
 
 
-  <title> 用iso做本地yumm源 | Charles Xu </title>
+  <title> 数字图像处理-灰度化 | Charles Xu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -312,7 +297,7 @@ total 16
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2017/03/22/用iso做本地yumm源/">
+    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2017/03/23/grey/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Charles Xu">
@@ -333,7 +318,7 @@ total 16
             
             
               
-                用iso做本地yumm源
+                数字图像处理-灰度化
               
             
           </h1>
@@ -348,8 +333,8 @@ total 16
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T16:34:41+08:00">
-                2017-03-22
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-23T19:07:33+08:00">
+                2017-03-23
               </time>
             
 
@@ -371,8 +356,8 @@ total 16
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/operation/" itemprop="url" rel="index">
-                    <span itemprop="name">运维</span>
+                  <a href="/categories/programing/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
                   </a>
                 </span>
 
@@ -406,68 +391,67 @@ total 16
       
 
       
-        <p>使用Linux版本为centos 6.0 </p>
-<p>###1、找到yum的安装源设置 <br></p>
-<pre><code>[root@node2 yum.repos.d]# pwd
-/etc/yum.repos.d
+        <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>　　灰度化处理就是将一幅色彩图像转化为灰度图像的过程。彩色图像分为R，G，B三个分量，分别显示出红绿蓝等各种颜色，灰度化就是使彩色的R，G，B分量相等的过程。灰度值大的像素点比较亮（像素值最大为255，为白色），反之比较暗（像素最下为0，为黑色）。<br><br>　　图像灰度化的算法主要有以下3种：<br></p>
+<p>1)最大值法：使转化后的R，G，B得值等于转化前3个值中最大的一个，即：</p>
+<pre><code>R=G=B=max（R，G，B）                   　　　　　(1)
+</code></pre><p>这种方法转换的灰度图亮度很高。</p>
+<p>2)平均值法：是转化后R，G，B的值为转化前R,G,B的平均值。即：</p>
+<pre><code>R=G=B=(R+G+B)/3                                (2)
+</code></pre><p>这种方法产生的灰度图像比较柔和。</p>
+<p>3)加权平均值法：按照一定权值，对R，G，B的值加权平均，即：</p>
+<p><img src="/2017/03/23/grey/2.png" alt="logo">                       　　 　　　　　　　　　  (3)</p>
+<p> 　　ＷＲ，ＷＧ，ＷＢ分别为R，G，B的权值，取不同的值形成不同的灰度图像。由于人眼对绿色最为敏感，红色次之，对蓝色的敏感性最低，因此使将得到较易识别的灰度图像。一般 时，得到的灰度图像效果最好。</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>本次程序使用Python语言实现。具体如下：</p>
+<ol>
+<li>该程序通过PIL库实现直接载入图像文件。</li>
+<li>该程序需要通过array方法将图像转换成Numpy的数据对象。NumPy中的数组对象是多维的，可以用来表示向量、矩阵和图像。通过对图像的数据进行直接操作，就可以完成很多图像的处理。</li>
+<li>本程序的数据对像是三维的，分别代表横坐标，纵坐标和颜色通道</li>
+<li>遍历每个位置上的像素点，修改像素点的R,G,B值为该点上RGB的平均值。</li>
+<li>通过matplotlib模块将修改的后的图像输出显示。</li>
+</ol>
+<h2 id="处理结果"><a href="#处理结果" class="headerlink" title="处理结果"></a>处理结果</h2><p><img src="/2017/03/23/grey/1.png" alt="logo"></p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code># !/usr/bin/env python
+# -*- coding:utf-8 -*-
+from PIL import Image
+import matplotlib.pyplot as plt
+import numpy as np
 
-[root@node2 yum.repos.d]# ll
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo
--rw-r--r--. 1 root root  637 Jul  2 22:16 CentOS-Debuginfo.repo
--rw-r--r--. 1 root root  626 Jul  2 22:16 CentOS-Media.repo
-</code></pre><p>将上面列出的三个.repo源列表文件改一下名，我们不用系统默认的安装源列表，默认的都是官方的很多软件源，连接很慢。然后复制一份CentOS-Base.repo并命名为iso.repo<br></p>
-<pre><code>[root@node2 yum.repos.d]# ll
 
-total 16
--rw-r--r--. 1 root root 1926 Jul  2 22:16 CentOS-Base.repo.save
--rw-r--r--. 1 root root  637 Jul  2 22:16 CentOS-Debuginfo.repo.save
--rw-r--r--. 1 root root  626 Jul  2 22:16 CentOS-Media.repo.save
--rw-r--r--. 1 root root  697 Oct 24 10:28 iso.repo
-</code></pre><p>###2、修改iso.repo内容，只剩下这些内容：</p>
-<pre><code># CentOS-Base.repo
-#
-[base]
-name=CentOS-$releasever - Base
-baseurl=file:///mnt/cdrom/
-gpgcheck=1
-enabled=1
-gpgkey=file:///mnt/cdrom/RPM-GPG-KEY-CentOS-6
-</code></pre><p>###3、mount系统安装iso到指定目录<br><strong>[root@node2 yum.repos.d]# mkdir /mnt/cdrom</strong><br></p>
-<p><strong>[root@node2 yum.repos.d]# mount -t iso9660 -r /dev/cdrom /mnt/cdrom</strong><br></p>
-<p>其中-t iso9660指明了文件格式是iso标准的， -r表示只读模式， /dev/cdrom是光驱设备，/mnt/cdrom是自定义的目录。<br><br>然后进入到/mnt/cdrom下查看文件如下结果，就为正确了。<br></p>
-<p><strong>[root@node2 cdrom]# ll</strong><br></p>
-<pre><code>total 632&lt;/br&gt;
--rw-r--r--. 2 zxliu zxliu     14 Jul  9 12:46 CentOS_BuildTag
-drwxr-xr-x. 4 zxliu zxliu   2048 Jun  9 20:54 EFI
--rw-rw-r--. 2 zxliu zxliu    212 Jul  1 21:23 EULA
--rw-rw-r--. 2 zxliu zxliu  18009 Jul  1 21:23 GPL
-drwxr-xr-x. 3 zxliu zxliu   2048 Jul  9 12:46 images
-drwxr-xr-x. 2 zxliu zxliu   2048 Jul  9 12:43 isolinux
-drwxrwxr-x. 2 zxliu zxliu 604160 Jul  9 12:51 Packages
--rw-rw-r--. 2 zxliu zxliu   1354 Jul  2 23:39 RELEASE-NOTES-en-US.html
-drwxr-xr-x. 2 zxliu zxliu   4096 Jul  9 12:53 repodata
--rw-r--r--. 2 zxliu zxliu   1706 Jul  2 23:31 RPM-GPG-KEY-CentOS-6
--rw-r--r--. 2 zxliu zxliu   1730 Jul  2 23:31 RPM-GPG-KEY-CentOS-Debug-6
--rw-r--r--. 2 zxliu zxliu   1730 Jul  2 23:31 RPM-GPG-KEY-CentOS-Security-6
--rw-r--r--. 2 zxliu zxliu   1734 Jul  2 23:31 RPM-GPG-KEY-CentOS-Testing-6
--r--r--r--. 1 zxliu zxliu   3380 Jul  9 12:53 TRANS.TBL
-</code></pre><p>可以看到packages和RPM-GPG-KEY-CentOS-6这是两个最重要的东西，yum就参考这两个来安装软件的。</p>
-<p>###4、执行yum list命令查看软件列表<br><strong>[root@node2 cdrom]# yum list| grep gcc</strong><br></p>
-<pre><code>gcc.x86_64                                4.4.4-13.el6                     @base
-gcc-c++.x86_64                            4.4.4-13.el6                     @base
-libgcc.x86_64                             4.4.4-13.el6                     @anaconda-CentOS-201106060106.x86_64/6.0
-compat-gcc-34.x86_64                      3.4.6-19.el6                     base
-compat-gcc-34-c++.x86_64                  3.4.6-19.el6                     base
-compat-gcc-34-g77.x86_64                  3.4.6-19.el6                     base
-gcc-gfortran.x86_64                       4.4.4-13.el6                     base
-gcc-gnat.x86_64                           4.4.4-13.el6                     base
-gcc-Java.x86_64                           4.4.4-13.el6                     base
-gcc-objc.x86_64                           4.4.4-13.el6                     base
-gcc-objc++.x86_64                         4.4.4-13.el6                     base
-libgcc.i686                                  4.4.4-13.el6                     base
-</code></pre><p>至此可以用yum进行安装了</p>
+def graying(image, case=2):
+    &quot;&quot;&quot;graying 函数用于灰度化处理，将图像文件转为numpy数据对象后引入&quot;&quot;&quot;
+    for i in range(0, image.shape[0]):         # im.shape[0]为图像的高，
+        for j in range(0, image.shape[1]):     # im.shape[1]为图像的宽
+            if case == 1:
+                gray = max(image[i, j, 0], image[i, j, 1], image[i, j, 2])  # 最大值法
+            if case == 2:
+                gray = (int(image[i, j, 0])+int(image[i, j, 1])+int(image[i, j, 2]))/3  # 平均值法
+            if case == 3:
+                gray = (0.299*(image[i, j, 0]) + 0.587*(image[i, j, 1]) + 0.114*(image[i, j, 2]))  # 加权平均值法
+            image[i, j, 0] = gray
+            image[i, j, 1] = gray
+            image[i, j, 2] = gray
 
+
+def save_image(image):
+    &quot;&quot;&quot;图片保存&quot;&quot;&quot;
+    pil_im = Image.fromarray(image)
+    pil_im.save(&apos;cat_gray.jpg&apos;)
+
+if __name__ == &apos;__main__&apos;:
+    &quot;&quot;&quot;灰度化结果&quot;&quot;&quot;
+    im_gray = np.array(Image.open(&apos;cat.jpg&apos;))  # 导入图像,并转为numpy数据对象
+    im_original = im_gray.copy()
+    graying(im_gray)                            # 灰度化处理
+
+    plt.subplot(211), plt.imshow(im_original)
+    plt.title(&apos;Original Image&apos;), plt.xticks([]), plt.yticks([])
+    plt.subplot(212), plt.imshow(im_gray)
+    plt.title(&apos;Gray&apos;), plt.xticks([]), plt.yticks([])
+    plt.show()
+
+
+# -*- end of file -*-
+</code></pre>
       
     </div>
 
@@ -517,7 +501,7 @@ libgcc.i686                                  4.4.4-13.el6                     ba
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/python/" rel="tag"># python</a>
           
         </div>
       
@@ -530,8 +514,8 @@ libgcc.i686                                  4.4.4-13.el6                     ba
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/22/配置shadowsocks代理加快git clone速度/" rel="next" title="配置shadowsocks代理加快git clone速度">
-                <i class="fa fa-chevron-left"></i> 配置shadowsocks代理加快git clone速度
+              <a href="/2017/03/22/linux_updata/" rel="next" title="linux内核升级">
+                <i class="fa fa-chevron-left"></i> linux内核升级
               </a>
             
           </div>
@@ -540,8 +524,8 @@ libgcc.i686                                  4.4.4-13.el6                     ba
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/03/22/linux_updata/" rel="prev" title="linux内核升级">
-                linux内核升级 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/03/23/contrast/" rel="prev" title="数字图像处理-对比度调整">
+                数字图像处理-对比度调整 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -589,8 +573,17 @@ libgcc.i686                                  4.4.4-13.el6                     ba
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/0.png"
@@ -672,6 +665,22 @@ libgcc.i686                                  4.4.4-13.el6                     ba
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理结果"><span class="nav-number">3.</span> <span class="nav-text">处理结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">4.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
