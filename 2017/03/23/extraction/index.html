@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://xandl.cn/2017/03/23/extraction/0.png">
 <meta property="og:image" content="http://xandl.cn/2017/03/23/extraction/1.png">
 <meta property="og:image" content="http://xandl.cn/2017/03/23/extraction/2.png">
-<meta property="og:updated_time" content="2017-03-23T11:58:15.834Z">
+<meta property="og:updated_time" content="2017-03-24T00:47:52.793Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数字图像处理-角点算法">
 <meta name="twitter:description" content="原理　　角点没有明确的数学定义,但人们普遍认为角点 是二维图像亮度变化剧烈的点或图像边缘曲线上曲率极大值的点。目前的角点检测算法可归纳为3类：基于灰度图像的角点检测、基于二值图像的角点检测、基于轮廓曲线的角点检测。角点是图像很重要的特征，对图像图形的理解和分析有很重要的作用。　　基于灰度图像的角点检测又可分为基于梯度、基于模板和基于模板梯度组合3类方法，其中基于模板的方法主要考虑像素领域点的灰度变">
@@ -415,88 +415,7 @@
 <li>通过matplotlib模块将修改的后的图像输出显示。</li>
 </ol>
 <h2 id="处理结果"><a href="#处理结果" class="headerlink" title="处理结果"></a>处理结果</h2><p><img src="/2017/03/23/extraction/2.png" alt="logo"></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code># !/usr/bin/env python
-# -*- coding:utf-8 -*-
-from PIL import Image
-import matplotlib.pyplot as plt
-import numpy as np
-import gray
-
-
-def img_extraction(image):
-    &quot;&quot;&quot; img_extraction 函数利用susan角点检测算法，对图像进行处理&quot;&quot;&quot;
-    print(&quot;最小灰度值，%d&quot; % image.min())
-    print(&quot;最大灰度值，%d&quot; % image.max())
-    threshold_value = (int(image.max())-int(image.min()))/10
-    print(&quot;初始阈值为： %d&quot; % threshold_value)
-
-    offsetX = [
-                -1, 0, 1,
-            -2, -1, 0, 1, 2,
-        -3, -2, -1, 0, 1, 2, 3,
-        -3, -2, -1, 0, 1, 2, 3,
-        -3, -2, -1, 0, 1, 2, 3,
-            -2, -1, 0, 1, 2,
-                -1, 0, 1
-        ]
-    offsetY = [
-                -3, -3, -3,
-            -2, -2, -2, -2, -2,
-        -1, -1, -1, -1, -1, -1, -1,
-             0, 0, 0, 0, 0, 0, 0,
-             1, 1, 1, 1, 1, 1, 1,
-                2, 2, 2, 2, 2,
-                   3, 3, 3
-        ]
-
-    for i in range(3, image.shape[1] - 3):     # 利用圆形模板遍历图像，计算每点处的USAN值
-        for j in range(3, image.shape[0] - 3):
-            same = 0
-            for k in range(0, 37):
-                if abs(int(image[i + int(offsetY[k]), j + int(offsetX[k]), 0]) -
-                               int(image[i, j, 0])) &lt; threshold_value:             # 计算相似度
-                        same += 1
-            if same &lt; 18:
-                image[i, j, 0] = 18 - same
-                image[i, j, 1] = 18 - same
-                image[i, j, 2] = 18 - same
-            else:
-                image[i, j, 0] = 0
-                image[i, j, 1] = 0
-                image[i, j, 2] = 0
-
-
-def img_revise(image):
-    &quot;&quot;&quot;img_revise 函数用于对角点处理后的图像，进行非极大值抑制修正&quot;&quot;&quot;
-    X = [-1, -1, -1, 0, 0, 1, 1, 1]     # X轴偏移
-    Y = [-1, 0, 1, -1, 1, -1, 0, 1]     # Y轴偏移
-    for i in range(4, image.shape[1]-4):
-        for j in range(4, image.shape[0]-4):
-            flag = 0
-            for k in range(0, 8):
-                if image[i, j, 0] &lt;= image[int(i + X[k]), int(j + Y[k]), 0]:
-                    flag += 1
-                    break
-            if flag == 0:       # 判断是否是周围8个点中最大的值，是则保留
-                image[i, j, 0] = 255
-                image[i, j, 1] = 255
-                image[i, j, 2] = 255
-            else:
-                image[i, j, 0] = 0
-                image[i, j, 1] = 0
-                image[i, j, 2] = 0
-
-if __name__ == &apos;__main__&apos;:
-    im = np.array(Image.open(&apos;lena.jpg&apos;))
-    gray.graying(im)  # 灰度化预处理
-    img_extraction(im)
-    img_revise(im)
-    plt.imshow(im)
-    plt.show()
-
-
-# -*- end of file -*-
-</code></pre>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> gray</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_extraction</span><span class="params">(image)</span>:</span></div><div class="line">    <span class="string">""" img_extraction 函数利用susan角点检测算法，对图像进行处理"""</span></div><div class="line">    print(<span class="string">"最小灰度值，%d"</span> % image.min())</div><div class="line">    print(<span class="string">"最大灰度值，%d"</span> % image.max())</div><div class="line">    threshold_value = (int(image.max())-int(image.min()))/<span class="number">10</span></div><div class="line">    print(<span class="string">"初始阈值为： %d"</span> % threshold_value)</div><div class="line"></div><div class="line">    offsetX = [</div><div class="line">                <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>,</div><div class="line">            <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>,</div><div class="line">        <span class="number">-3</span>, <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</div><div class="line">        <span class="number">-3</span>, <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</div><div class="line">        <span class="number">-3</span>, <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</div><div class="line">            <span class="number">-2</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>,</div><div class="line">                <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span></div><div class="line">        ]</div><div class="line">    offsetY = [</div><div class="line">                <span class="number">-3</span>, <span class="number">-3</span>, <span class="number">-3</span>,</div><div class="line">            <span class="number">-2</span>, <span class="number">-2</span>, <span class="number">-2</span>, <span class="number">-2</span>, <span class="number">-2</span>,</div><div class="line">        <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>,</div><div class="line">             <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>,</div><div class="line">             <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>,</div><div class="line">                <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>,</div><div class="line">                   <span class="number">3</span>, <span class="number">3</span>, <span class="number">3</span></div><div class="line">        ]</div><div class="line"></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, image.shape[<span class="number">1</span>] - <span class="number">3</span>):     <span class="comment"># 利用圆形模板遍历图像，计算每点处的USAN值</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">3</span>, image.shape[<span class="number">0</span>] - <span class="number">3</span>):</div><div class="line">            same = <span class="number">0</span></div><div class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">37</span>):</div><div class="line">                <span class="keyword">if</span> abs(int(image[i + int(offsetY[k]), j + int(offsetX[k]), <span class="number">0</span>]) -</div><div class="line">                               int(image[i, j, <span class="number">0</span>])) &lt; threshold_value:             <span class="comment"># 计算相似度</span></div><div class="line">                        same += <span class="number">1</span></div><div class="line">            <span class="keyword">if</span> same &lt; <span class="number">18</span>:</div><div class="line">                image[i, j, <span class="number">0</span>] = <span class="number">18</span> - same</div><div class="line">                image[i, j, <span class="number">1</span>] = <span class="number">18</span> - same</div><div class="line">                image[i, j, <span class="number">2</span>] = <span class="number">18</span> - same</div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                image[i, j, <span class="number">0</span>] = <span class="number">0</span></div><div class="line">                image[i, j, <span class="number">1</span>] = <span class="number">0</span></div><div class="line">                image[i, j, <span class="number">2</span>] = <span class="number">0</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_revise</span><span class="params">(image)</span>:</span></div><div class="line">    <span class="string">"""img_revise 函数用于对角点处理后的图像，进行非极大值抑制修正"""</span></div><div class="line">    X = [<span class="number">-1</span>, <span class="number">-1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>]     <span class="comment"># X轴偏移</span></div><div class="line">    Y = [<span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">1</span>, <span class="number">-1</span>, <span class="number">0</span>, <span class="number">1</span>]     <span class="comment"># Y轴偏移</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>, image.shape[<span class="number">1</span>]<span class="number">-4</span>):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">4</span>, image.shape[<span class="number">0</span>]<span class="number">-4</span>):</div><div class="line">            flag = <span class="number">0</span></div><div class="line">            <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">8</span>):</div><div class="line">                <span class="keyword">if</span> image[i, j, <span class="number">0</span>] &lt;= image[int(i + X[k]), int(j + Y[k]), <span class="number">0</span>]:</div><div class="line">                    flag += <span class="number">1</span></div><div class="line">                    <span class="keyword">break</span></div><div class="line">            <span class="keyword">if</span> flag == <span class="number">0</span>:       <span class="comment"># 判断是否是周围8个点中最大的值，是则保留</span></div><div class="line">                image[i, j, <span class="number">0</span>] = <span class="number">255</span></div><div class="line">                image[i, j, <span class="number">1</span>] = <span class="number">255</span></div><div class="line">                image[i, j, <span class="number">2</span>] = <span class="number">255</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                image[i, j, <span class="number">0</span>] = <span class="number">0</span></div><div class="line">                image[i, j, <span class="number">1</span>] = <span class="number">0</span></div><div class="line">                image[i, j, <span class="number">2</span>] = <span class="number">0</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    im = np.array(Image.open(<span class="string">'lena.jpg'</span>))</div><div class="line">    gray.graying(im)  <span class="comment"># 灰度化预处理</span></div><div class="line">    img_extraction(im)</div><div class="line">    img_revise(im)</div><div class="line">    plt.imshow(im)</div><div class="line">    plt.show()</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># -*- end of file -*-</span></div></pre></td></tr></table></figure>
       
     </div>
 

@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://xandl.cn/2017/03/23/img-match/0.png">
 <meta property="og:image" content="http://xandl.cn/2017/03/23/img-match/1.png">
 <meta property="og:image" content="http://xandl.cn/2017/03/23/img-match/2.png">
-<meta property="og:updated_time" content="2017-03-23T12:03:11.227Z">
+<meta property="og:updated_time" content="2017-03-24T00:47:52.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数字图像处理-模板匹配">
 <meta name="twitter:description" content="原理　　模板匹配是一项在一幅图像中寻找与另一幅模板图像最匹配(相似)部分的技术。　　本程序采用绝对误差和算法（Sum of Absolute Differences，简称SAD算法）实现：设S(x,y)是大小为mxn的原始图像，T(x,y)是MxN的模板图像，分别如下图(a)、(b)所示，我们的目的是：在(a)中找到与(b)匹配的区域（黄框所示）。 　　在搜索图S中，以(i,j)为左上角，取MxN">
@@ -411,58 +411,8 @@
 <li>在原图上画出匹配区域并显示。</li>
 </ol>
 <h2 id="处理结果"><a href="#处理结果" class="headerlink" title="处理结果"></a>处理结果</h2><p><img src="/2017/03/23/img-match/2.png" alt="logo"></p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code># !/usr/bin/env python
-# -*- coding:utf-8 -*-
-from PIL import Image
-import matplotlib.pyplot as plt
-import numpy as np
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">img_match</span><span class="params">(src, template, show=True)</span>:</span></div><div class="line">    <span class="string">"""img_match 函数利用绝对误差和算法，对两幅图像进行模板匹配"""</span></div><div class="line">    src_copy = src.copy()       <span class="comment"># src_copy为原图</span></div><div class="line">    t_height, t_width = template.shape  <span class="comment"># 模板尺寸</span></div><div class="line">    s_height, s_width = src.shape   <span class="comment"># 原图像尺寸</span></div><div class="line">    <span class="comment"># print(src.shape)</span></div><div class="line">    dst = np.zeros([s_width - t_width, s_height - t_height])        <span class="comment"># 构造0矩阵</span></div><div class="line"></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, s_width - t_width):       <span class="comment"># 遍历原图</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, s_height - t_height):</div><div class="line">            temp = src[j:t_height + j, i:t_width + i]     <span class="comment"># 当前位置子图</span></div><div class="line">            dst[i][j] = dst[i][j] + np.sum(np.abs(temp - template))   <span class="comment"># 子图与模板的距离</span></div><div class="line"></div><div class="line">    abs_min = np.min(dst)</div><div class="line">    print(<span class="string">'abs_min:'</span>, abs_min)</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, s_width - t_width<span class="number">-1</span>):         <span class="comment"># 找出匹配位置的坐标点</span></div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, s_height - t_height<span class="number">-1</span>):</div><div class="line">            <span class="keyword">if</span> dst[i][j] == abs_min:</div><div class="line">                y = i</div><div class="line">                x = j</div><div class="line">    print(<span class="string">'x 坐标点为：%d \n'</span> % x, <span class="string">'y 坐标点为:%d '</span> % y)</div><div class="line"></div><div class="line">    <span class="keyword">if</span> show:</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, t_width):      <span class="comment"># 画出匹配位置</span></div><div class="line">            src[x+i, y] = <span class="number">255</span></div><div class="line">            src[x, y+i] = <span class="number">255</span></div><div class="line">            src[x+i, y+t_height] = <span class="number">255</span></div><div class="line">            src[x+t_width, y+i] = <span class="number">255</span></div><div class="line"></div><div class="line">        plt.subplot(<span class="number">221</span>), plt.imshow(src_copy, cmap=<span class="string">'gray'</span>)</div><div class="line">        plt.title(<span class="string">'Original Image'</span>), plt.xticks([]), plt.yticks([])</div><div class="line">        plt.subplot(<span class="number">223</span>), plt.imshow(template, cmap=<span class="string">'gray'</span>)</div><div class="line">        plt.title(<span class="string">'Template'</span>), plt.xticks([]), plt.yticks([])</div><div class="line">        plt.subplot(<span class="number">222</span>), plt.imshow(src, cmap=<span class="string">'gray'</span>)</div><div class="line">        plt.title(<span class="string">'Result'</span>), plt.xticks([]), plt.yticks([])</div><div class="line">        plt.show()</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    src1 = np.array(Image.open(<span class="string">'lena_gray.jpg'</span>))  <span class="comment"># 原图像</span></div><div class="line">    template1 = np.array(Image.open(<span class="string">'eye_gray.jpg'</span>))  <span class="comment"># 模板</span></div><div class="line">    img_match(src1, template1)</div><div class="line"></div><div class="line"><span class="comment"># -*- end of file -*-</span></div></pre></td></tr></table></figure>
 
-
-def img_match(src, template, show=True):
-    &quot;&quot;&quot;img_match 函数利用绝对误差和算法，对两幅图像进行模板匹配&quot;&quot;&quot;
-    src_copy = src.copy()       # src_copy为原图
-    t_height, t_width = template.shape  # 模板尺寸
-    s_height, s_width = src.shape   # 原图像尺寸
-    # print(src.shape)
-    dst = np.zeros([s_width - t_width, s_height - t_height])        # 构造0矩阵
-
-    for i in range(0, s_width - t_width):       # 遍历原图
-        for j in range(0, s_height - t_height):
-            temp = src[j:t_height + j, i:t_width + i]     # 当前位置子图
-            dst[i][j] = dst[i][j] + np.sum(np.abs(temp - template))   # 子图与模板的距离
-
-    abs_min = np.min(dst)
-    print(&apos;abs_min:&apos;, abs_min)
-    for i in range(0, s_width - t_width-1):         # 找出匹配位置的坐标点
-        for j in range(0, s_height - t_height-1):
-            if dst[i][j] == abs_min:
-                y = i
-                x = j
-    print(&apos;x 坐标点为：%d \n&apos; % x, &apos;y 坐标点为:%d &apos; % y)
-
-    if show:
-        for i in range(0, t_width):      # 画出匹配位置
-            src[x+i, y] = 255
-            src[x, y+i] = 255
-            src[x+i, y+t_height] = 255
-            src[x+t_width, y+i] = 255
-
-        plt.subplot(221), plt.imshow(src_copy, cmap=&apos;gray&apos;)
-        plt.title(&apos;Original Image&apos;), plt.xticks([]), plt.yticks([])
-        plt.subplot(223), plt.imshow(template, cmap=&apos;gray&apos;)
-        plt.title(&apos;Template&apos;), plt.xticks([]), plt.yticks([])
-        plt.subplot(222), plt.imshow(src, cmap=&apos;gray&apos;)
-        plt.title(&apos;Result&apos;), plt.xticks([]), plt.yticks([])
-        plt.show()
-
-
-if __name__ == &apos;__main__&apos;:
-    src1 = np.array(Image.open(&apos;lena_gray.jpg&apos;))  # 原图像
-    template1 = np.array(Image.open(&apos;eye_gray.jpg&apos;))  # 模板
-    img_match(src1, template1)
-
-# -*- end of file -*-
-</code></pre>
       
     </div>
 

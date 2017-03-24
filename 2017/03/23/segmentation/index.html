@@ -99,7 +99,7 @@
 　　在实际处理时候，为了显示需要一般用255（白色">
 <meta property="og:image" content="http://xandl.cn/2017/03/23/segmentation/0.png">
 <meta property="og:image" content="http://xandl.cn/2017/03/23/segmentation/1.png">
-<meta property="og:updated_time" content="2017-03-23T11:43:58.770Z">
+<meta property="og:updated_time" content="2017-03-24T00:48:16.031Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数字图像处理-阈值分割">
 <meta name="twitter:description" content="##原理 ##　　图像阈值化的目的是要按照灰度级，对像素集合进行一个划分，得到的每个子集形成一个与现实景物相对应的区域，各个区域内部具有一致的属性，而相邻区域不具有这种一致属性。这样的划分可以通过从灰度级出发选取一个或多个阈值来实现。
@@ -390,73 +390,7 @@
 <li>循环遍历每个位置上的像素点,将大于等于阈值点灰度值设置为255，小于阈值点灰度值设置为0；</li>
 <li>通过matplotlib模块将修改的后的图像输出显示。<br>##处理结果 ##<br><img src="/2017/03/23/segmentation/1.png" alt="logo"></li>
 </ol>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre><code># !/usr/bin/env python
-# -*- coding:utf-8 -*-
-from PIL import Image
-import matplotlib.pyplot as plt
-import numpy as np
-import gray
-
-
-def find_value(image):
-    &quot;&quot;&quot;find_value 函数用于阈值分割寻找合适的阈值&quot;&quot;&quot;
-    threshold_value = (int(image.min()) + int(image.max())) / 2  # 设置初始阈值为最大灰度值和最小灰度值的平均值
-    print(&quot;初始阈值: %d&quot; % threshold_value)
-    high = 0  # 大于阈值的区域的平均灰度,初始值为0
-    low = 0  # 小于阈值的区域的平均灰度,初始值为0
-    count_high = 0  # 计数器，大于阈值区域,初始值为0
-    count_low = 0  # 计数器，小于阈值区域,初始值为0
-    value_diff = 3  # 两次阈值差初始值为3
-    while abs(value_diff) &gt; 0:
-        for i in range(0, image.shape[0]):
-            for j in range(0, image.shape[1]):
-                if im[i, j, 0] &gt;= threshold_value:  # 大于阈值，将该灰度值加入high区域中
-                    high = im[i, j, 0] + high
-                    count_high += 1
-                else:  # 小于阈值，将该灰度值加入low区域中
-                    low = im[i, j, 0] + low
-                    count_low += 1
-
-        high = high / count_high  # high区域平均灰度值
-        low = low / count_low  # low区域平均灰度值
-
-        value_diff = (high + low) / 2 - threshold_value  # 新差值
-        threshold_value = (high + low) / 2  # 新阈值
-        print(&quot;新阈值: %f&quot; % threshold_value)
-        print(&quot;阈值差值：%f&quot; % value_diff)
-        high = 0  # 重置
-        low = 0
-        count_high = 0
-        count_low = 0
-
-    return threshold_value
-
-
-def segmentation(image, threshold_value):
-    &quot;&quot;&quot;segmentation 函数用于对图像进行阈值分割&quot;&quot;&quot;
-    for i in range(0, image.shape[0]):
-        for j in range(0, image.shape[1]):
-            if image[i, j, 0] &gt;= threshold_value:
-                image[i, j, 0] = 255
-                image[i, j, 1] = 255
-                image[i, j, 2] = 255
-            else:
-                image[i, j, 0] = 0
-                image[i, j, 1] = 0
-                image[i, j, 2] = 0
-
-
-if __name__ == &apos;__main__&apos;:
-    im = np.array(Image.open(&apos;lena.jpg&apos;))
-    gray.graying(im)  # 灰度化预处理
-    value = find_value(im)
-    segmentation(im, value)
-    plt.imshow(im)
-    plt.show()
-
-
-# -*- end of file -*-
-</code></pre>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># !/usr/bin/env python</span></div><div class="line"><span class="comment"># -*- coding:utf-8 -*-</span></div><div class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</div><div class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</div><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"><span class="keyword">import</span> gray</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_value</span><span class="params">(image)</span>:</span></div><div class="line">    <span class="string">"""find_value 函数用于阈值分割寻找合适的阈值"""</span></div><div class="line">    threshold_value = (int(image.min()) + int(image.max())) / <span class="number">2</span>  <span class="comment"># 设置初始阈值为最大灰度值和最小灰度值的平均值</span></div><div class="line">    print(<span class="string">"初始阈值: %d"</span> % threshold_value)</div><div class="line">    high = <span class="number">0</span>  <span class="comment"># 大于阈值的区域的平均灰度,初始值为0</span></div><div class="line">    low = <span class="number">0</span>  <span class="comment"># 小于阈值的区域的平均灰度,初始值为0</span></div><div class="line">    count_high = <span class="number">0</span>  <span class="comment"># 计数器，大于阈值区域,初始值为0</span></div><div class="line">    count_low = <span class="number">0</span>  <span class="comment"># 计数器，小于阈值区域,初始值为0</span></div><div class="line">    value_diff = <span class="number">3</span>  <span class="comment"># 两次阈值差初始值为3</span></div><div class="line">    <span class="keyword">while</span> abs(value_diff) &gt; <span class="number">0</span>:</div><div class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, image.shape[<span class="number">0</span>]):</div><div class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, image.shape[<span class="number">1</span>]):</div><div class="line">                <span class="keyword">if</span> im[i, j, <span class="number">0</span>] &gt;= threshold_value:  <span class="comment"># 大于阈值，将该灰度值加入high区域中</span></div><div class="line">                    high = im[i, j, <span class="number">0</span>] + high</div><div class="line">                    count_high += <span class="number">1</span></div><div class="line">                <span class="keyword">else</span>:  <span class="comment"># 小于阈值，将该灰度值加入low区域中</span></div><div class="line">                    low = im[i, j, <span class="number">0</span>] + low</div><div class="line">                    count_low += <span class="number">1</span></div><div class="line"></div><div class="line">        high = high / count_high  <span class="comment"># high区域平均灰度值</span></div><div class="line">        low = low / count_low  <span class="comment"># low区域平均灰度值</span></div><div class="line"></div><div class="line">        value_diff = (high + low) / <span class="number">2</span> - threshold_value  <span class="comment"># 新差值</span></div><div class="line">        threshold_value = (high + low) / <span class="number">2</span>  <span class="comment"># 新阈值</span></div><div class="line">        print(<span class="string">"新阈值: %f"</span> % threshold_value)</div><div class="line">        print(<span class="string">"阈值差值：%f"</span> % value_diff)</div><div class="line">        high = <span class="number">0</span>  <span class="comment"># 重置</span></div><div class="line">        low = <span class="number">0</span></div><div class="line">        count_high = <span class="number">0</span></div><div class="line">        count_low = <span class="number">0</span></div><div class="line"></div><div class="line">    <span class="keyword">return</span> threshold_value</div><div class="line"></div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">segmentation</span><span class="params">(image, threshold_value)</span>:</span></div><div class="line">    <span class="string">"""segmentation 函数用于对图像进行阈值分割"""</span></div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, image.shape[<span class="number">0</span>]):</div><div class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>, image.shape[<span class="number">1</span>]):</div><div class="line">            <span class="keyword">if</span> image[i, j, <span class="number">0</span>] &gt;= threshold_value:</div><div class="line">                image[i, j, <span class="number">0</span>] = <span class="number">255</span></div><div class="line">                image[i, j, <span class="number">1</span>] = <span class="number">255</span></div><div class="line">                image[i, j, <span class="number">2</span>] = <span class="number">255</span></div><div class="line">            <span class="keyword">else</span>:</div><div class="line">                image[i, j, <span class="number">0</span>] = <span class="number">0</span></div><div class="line">                image[i, j, <span class="number">1</span>] = <span class="number">0</span></div><div class="line">                image[i, j, <span class="number">2</span>] = <span class="number">0</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    im = np.array(Image.open(<span class="string">'lena.jpg'</span>))</div><div class="line">    gray.graying(im)  <span class="comment"># 灰度化预处理</span></div><div class="line">    value = find_value(im)</div><div class="line">    segmentation(im, value)</div><div class="line">    plt.imshow(im)</div><div class="line">    plt.show()</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment"># -*- end of file -*-</span></div></pre></td></tr></table></figure>
       
     </div>
 
