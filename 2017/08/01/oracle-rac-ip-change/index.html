@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="ORACLE,RAC," />
 
 
 
@@ -94,14 +94,14 @@
 * #">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle RAC IP修改">
-<meta property="og:url" content="http://xandl.cn/2017/08/01/oracle-RAC-IP-修改/index.html">
+<meta property="og:url" content="http://xandl.cn/2017/08/01/oracle-rac-ip-change/index.html">
 <meta property="og:site_name" content="Charles Xu">
 <meta property="og:description" content="一、修改前的IP地址* #more /etc/hosts
 * 127.0.0.1     localhost localhost.localdomain localhost4 localhost4.localdomain
 * ::1           localhost localhost.localdomain localhost6 localhost6.localdomain
 * 
 * #">
-<meta property="og:updated_time" content="2017-08-01T07:10:18.829Z">
+<meta property="og:updated_time" content="2017-08-01T07:16:02.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Oracle RAC IP修改">
 <meta name="twitter:description" content="一、修改前的IP地址* #more /etc/hosts
@@ -136,7 +136,7 @@
 
 
 
-  <link rel="canonical" href="http://xandl.cn/2017/08/01/oracle-RAC-IP-修改/"/>
+  <link rel="canonical" href="http://xandl.cn/2017/08/01/oracle-rac-ip-change/"/>
 
 
 
@@ -310,7 +310,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2017/08/01/oracle-RAC-IP-修改/">
+    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2017/08/01/oracle-rac-ip-change/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Charles Xu">
@@ -449,8 +449,7 @@
 * #crsctl stop crs
 </code></pre><p>在两个节点上运行<br>ps -ef |grep grid<br>没有任何输出</p>
 <p>（此处遇到一个问题：节点1顺利停掉，节点2还是有很多进程。 在节点2上执行crsctl stop has）</p>
-<h2 id="三、修改IP"><a href="#三、修改IP" class="headerlink" title="三、修改IP"></a>三、修改IP</h2><p>修改两台hosts，修改两台IP地址，登陆到新地址。</p>
-<p>先在node1执行：</p>
+<h2 id="三、修改IP"><a href="#三、修改IP" class="headerlink" title="三、修改IP"></a>三、修改IP</h2><p>修改两台hosts，修改两台IP地址，登陆到新地址。<br>先在node1执行：</p>
 <pre><code>* #crsctl start crs
 </code></pre><p>立即在node2执行</p>
 <pre><code>* #crsctl start crs
@@ -578,7 +577,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/ORACLE/" rel="tag"># ORACLE</a>
+          
+            <a href="/tags/RAC/" rel="tag"># RAC</a>
           
         </div>
       
@@ -693,7 +694,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
