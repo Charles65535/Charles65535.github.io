@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="产品，PM" />
+  <meta name="keywords" content="java," />
 
 
 
@@ -87,15 +87,19 @@
 
 
 
-<meta name="description" content="知行合一">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Charles Xu">
-<meta property="og:url" content="http://xandl.cn/archives/2018/01/index.html">
+<meta name="description" content="今天在写代码时遇到的问题：java操作oralce数据库，查询可以，但是更新不成功，也没有任何报错。
+1234567891011121314151617public void upDate(String cardNo,String cardPin)&amp;#123;    connection = getConnection();    String sqlStr = &amp;quot;update test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java操作oracle数据库，更新不成功">
+<meta property="og:url" content="http://xandl.cn/2018/03/14/java操作oracle数据库更新不成功/index.html">
 <meta property="og:site_name" content="Charles Xu">
-<meta property="og:description" content="知行合一">
+<meta property="og:description" content="今天在写代码时遇到的问题：java操作oralce数据库，查询可以，但是更新不成功，也没有任何报错。
+1234567891011121314151617public void upDate(String cardNo,String cardPin)&amp;#123;    connection = getConnection();    String sqlStr = &amp;quot;update test">
+<meta property="og:updated_time" content="2018-03-14T15:11:21.193Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Charles Xu">
-<meta name="twitter:description" content="知行合一">
+<meta name="twitter:title" content="java操作oracle数据库，更新不成功">
+<meta name="twitter:description" content="今天在写代码时遇到的问题：java操作oralce数据库，查询可以，但是更新不成功，也没有任何报错。
+1234567891011121314151617public void upDate(String cardNo,String cardPin)&amp;#123;    connection = getConnection();    String sqlStr = &amp;quot;update test">
 
 
 
@@ -123,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://xandl.cn/archives/2018/01/"/>
+  <link rel="canonical" href="http://xandl.cn/2018/03/14/java操作oracle数据库更新不成功/"/>
 
 
 
 
 
-  <title> 归档 | Charles Xu </title>
+  <title> java操作oracle数据库，更新不成功 | Charles Xu </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -173,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left  page-archive  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -287,66 +291,207 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 13 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://xandl.cn/2018/03/14/java操作oracle数据库更新不成功/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Charles Xu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/0.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Charles Xu">
     </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                java操作oracle数据库，更新不成功
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T23:01:24+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
-      
 
+      
+        <p>今天在写代码时遇到的问题：java操作oralce数据库，查询可以，但是更新不成功，也没有任何报错。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">public void upDate(String cardNo,String cardPin)&#123;</div><div class="line">    connection = getConnection();</div><div class="line">    String sqlStr = &quot;update test01 set card_pin =? where card_no=?&quot;;</div><div class="line">    try&#123;</div><div class="line">        pstm =  connection.prepareStatement(sqlStr);</div><div class="line">        pstm.setString(1,&quot;ABCDABCDABCD&quot;);</div><div class="line">        pstm.setString(2,&quot;6210240099999999&quot;);</div><div class="line">        //pstm.setString(1,cardPin);</div><div class="line">        //pstm.setString(2,cardNo);</div><div class="line">        pstm.executeUpdate ();</div><div class="line">    &#125;catch (SQLException e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;finally &#123;</div><div class="line">        releaseResource ();</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">public void selectData()&#123;...&#125;</div></pre></td></tr></table></figure>
+<p>  发现怎么都Update不了。<br>  因为查询可以成功，排除了数据库连接的问题。<br>  去掉where条件以后，可以Update成功。说明是where条件的问题。<br>  看了下数据库表结构,card_no 这个卡号的字段是char (19)的，char型定长19，而我传进去的卡号是16位的，所以没有报错，也没有更新成功。<br>  改下代码如下，就可以了。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">  public void upDate(String cardNo,String cardPin)&#123;</div><div class="line">    connection = getConnection();</div><div class="line">    String sqlStr = &quot;update test01 set card_pin =？ </div><div class="line">    where card_no=cast(? as char(19))&quot;;</div><div class="line">    try&#123;</div><div class="line">        pstm =  connection.prepareStatement(sqlStr);</div><div class="line">        pstm.setString(1,&quot;ABCDABCDABCD&quot;);</div><div class="line">        pstm.setString(2,&quot;6210240099999999&quot;);</div><div class="line">        //pstm.setString(1,cardPin);</div><div class="line">        //pstm.setString(2,cardNo);</div><div class="line">        pstm.executeUpdate ();</div><div class="line">    &#125;catch (SQLException e)&#123;</div><div class="line">        e.printStackTrace();</div><div class="line">    &#125;finally &#123;</div><div class="line">        releaseResource ();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>  如果数据库字段类型是varchar2，就不会有这个问题。</p>
+<p>  比较了一下varchar2和char。</p>
+<pre><code>CHAR:
+1.长度固定，当char（15）的元素中只有“abc”时,其余十二位用空格填补；
+
+VARCAHR:    
+1.长度不固定，该列中元素有多少位，就是多少位
+2.当数据为空时，该字段为空字符串；
+3.VARCHAR只对汉字或全角字符占两个字节处理，数字和英文等都是一个字节；
+
+VARCHAR2:
+1.当数据为空时，该数据显示为NULL;
+2.VARCHAR2（一般情况下）把所有字符都按两个字节处理，VARCHAR2字符要用几个字节存储，要看数据库使用的字符集，比如GBK，汉字就会占两个字节，英文1个。
+如果是UTF-8，汉字一般占3个字节，英文还是1个。 
+但是一般情况下，我们都认为是两个字节处理，因为oracle安装时候默认我们都选择GBK的编码格式，但是我们在页面做输入字符串长度的校验的时候，还是以数据库设计字段最大长度除3来作为最大长度-----防止数据库移植时设置不同编码格式；
+</code></pre><p>nvarcahr和nvarchar(2)</p>
+<pre><code>联系：1.都用于存储可变长度的字符串；
+
+      2.SIZE的最大值为4000，最小值为1（是字符个数，不是字节数）
+
+      3.这两种类型跟适合存储中文； 
+
+区别：1.nvarchar中，中文字符按两个字节计算，英文字符按一个字符计算；
+
+      2.nvarchar2中，所有字符都按两个字节计算；
+
+      3.nvarchar2虽然更占内存，但是兼容性比较好，所以推荐使用。
+</code></pre>
+      
+    </div>
+
+    <div>
       
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>如果文章对您有用请随意打赏，谢谢支持！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/w.png" alt="Charles Xu WeChat Pay"/>
+          <p>微信打赏</p>
         </div>
       
       
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/z.png" alt="Charles Xu Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
+    </div>
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
+    <div>
+      
         
-            <a class="post-title-link" href="/2018/01/08/read01/" itemprop="url">
-              
-                <span itemprop="name">《算法神探》书评</span>
-              
-            </a>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+        </div>
+      
+
+      
         
-      </h1>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-08T23:01:15+08:00"
-              content="2018-01-08" >
-          01-08
-        </time>
-      </div>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/08/read01/" rel="next" title="《算法神探》书评">
+                <i class="fa fa-chevron-left"></i> 《算法神探》书评
+              </a>
+            
+          </div>
 
-    </header>
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -354,6 +499,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -588,11 +737,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
 
 
   
